@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="wrapper"style="padding-top:50px">
+      <div class="row">
+          <div class="col-md-5">
+            <div class="card" style="margin-top:35px;background-color:rgb(243, 243, 243)">
+              <div class="card-body" style="padding-left:15px;padding-right:15px;padding-top:25px;">
+                <h2 class="card-title">SIGN IN</h2>
+                <hr/>
+                <form align="align-items-center" name="form" (ngSubmit)="f.form.valid && OnSubmit()" #f="ngForm">
+                  <div class="form-group">
+                    <label for="Email">Email : </label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email" #email="ngModel" [(ngModel)]="usermodel.email"
+                      [ngClass]="{'is-invalid': f.submitted && email.invalid}" required>
+                    <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                      <div *ngIf="email.errors.required">email is required</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="Password">Password :</label>
+                    <input type="password" class="form-control" id="pwd" name="password" placeholder="Password" #password="ngModel" [(ngModel)]="usermodel.password"
+                      [ngClass]="{'is-invalid': f.submitted && password.invalid}" required minlength="6">
+                    <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                      <div *ngIf="password.errors.required">password is required</div>
+                      <div *ngIf="password.errors.minlength">password must be at least 6 characters</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-block" (click)="onClick()" style=" background-color: #ff586b;
+                      color: #fff;
+                      border-color: #ff586b;">Login</button>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="chckme">
+                    <label class="form-check-label" style="margin-left:6px"> Remember me</label>
+                  </div>
+                  <div class="forgot-pwd" style="margin-top:20px">
+                    <a href="#">Forgot Password </a>
+                    <P>Dont have an account
+                        <a [routerLink]="['/sign-up']"> SignUp?</a> 
+                    </P>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>    
+  </div>
+</div>

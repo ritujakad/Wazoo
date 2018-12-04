@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="wrapper" style="padding-top:90px" >
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Add a Partner</h5>
+       
+        <form align="align-items-center" name="form" (ngSubmit)="f.form.valid && OnSubmit()" #f="ngForm">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="Companyname"> Company Name * : </label>
+                        <input type="text" class="form-control" name="compname" id="compname" placeholder="Enter Company Name" #compname="ngModel" [(ngModel)]="f.compname"
+                          [ngClass]="{'is-invalid': f.submitted && compname.invalid}" required>
+                        <div *ngIf="f.submitted && compname.invalid" class="invalid-feedback">
+                          <div *ngIf="compname.errors.required">Company Name is required</div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-8">
+                      <div class="form-group">
+                          <label for="website">Website * : </label>
+                          <input type="text" class="form-control" name="website" id="website" placeholder="Enter Website" #website="ngModel" [(ngModel)]="f.website"
+                            [ngClass]="{'is-invalid': f.submitted && website.invalid}" required>
+                          <div *ngIf="f.submitted && website.invalid" class="invalid-feedback">
+                            <div *ngIf="website.errors.required">Website is required</div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+                  
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="website">Email * : </label>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email" #email="ngModel" [(ngModel)]="f.email"
+                              [ngClass]="{'is-invalid': f.submitted && email.invalid}" required>
+                            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                              <div *ngIf="email.errors.required">Website is required</div>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                    
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-8">
+                          <div class="form-group">
+                              <label for="website">Phone : </label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone" #email="ngModel" [(ngModel)]="f.phone"
+                                [ngClass]="{'is-invalid': f.submitted && phone.invalid}" required>
+                              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                                <div *ngIf="email.errors.required">Website is required</div>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                      
+                  </div>
+                </div>
+            
+           
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

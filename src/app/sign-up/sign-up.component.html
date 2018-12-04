@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="col-sm-offset-4 col-md-5">
+      <div class="card" style="margin-top:35px;background-color:rgb(243, 243, 243)">
+        <div class="card-body" style="padding-left:15px;padding-right:15px;padding-top:25px;">
+          <h2 class="card-title">SIGN UP</h2>
+          <hr/>
+          <form align="align-items-center" name="form" (ngSubmit)="f.form.valid && OnSubmit()" #f="ngForm">
+            <div class="form-group">
+              <label for="First Name">First Name : </label>
+              <input type="text" class="form-control" name="fname" id="fname" placeholder="Enter FirstName*" #firstname="ngModel" [(ngModel)]="usermodel.firstName"
+                [ngClass]="{'is-invalid': f.submitted && firstname.invalid}" required>
+              <div *ngIf="f.submitted && firstname.invalid" class="invalid-feedback">
+                <div *ngIf="fname.errors.required">FirstName is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Last Name">Last Name : </label>
+              <input type="text" class="form-control" name="lname" id="lname" placeholder="Enter LastName" #lastname="ngModel" [(ngModel)]="usermodel.lastname"
+                [ngClass]="{'is-invalid': f.submitted && lastname.invalid}" required>
+              <div *ngIf="f.submitted && lastname.invalid" class="invalid-feedback">
+                <div *ngIf="lastname.errors.required">LastName is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Email">Email : </label>
+              <input type="text" class="form-control" name="emailid" id="emailid" placeholder="Enter Email*" #email="ngModel" [(ngModel)]="usermodel.email"
+                [ngClass]="{'is-invalid': f.submitted && email.invalid}" required>
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                <div *ngIf="email.errors.required">Email is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="Password">Password :</label>
+              <input type="password" class="form-control" name="pass" id="pass" placeholder="Password*" #password="ngModel" [(ngModel)]="usermodel.password"
+                [ngClass]="{'is-invalid': f.submitted && password.invalid}" required minlength="6">
+              <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">password must be at least 6 characters</div>
+              </div>
+            </div>
+            <div class="form-group">
+                <label for=" Confirm Password">Password :</label>
+                <input type="password" class="form-control" id="cpwd" name="cpwd" placeholder="Confirm Password*" #cpwd ="ngModel" [(ngModel)]="usermodel.cpwd"
+                  [ngClass]="{'is-invalid': f.submitted && cpwd.invalid}" required minlength="6">
+                <div *ngIf="f.submitted && cpwd.invalid" class="invalid-feedback">
+                  <div *ngIf="cpwd.errors.required">Password is required</div>
+                  <div *ngIf="cpwd.errors.minlength">password must be at least 6 characters</div>
+                </div>
+              </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block" style=" background-color: #ff586b;
+          color: #fff;
+          border-color: #ff586b;">Create an Account</button>
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
